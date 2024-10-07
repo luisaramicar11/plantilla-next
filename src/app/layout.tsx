@@ -3,6 +3,7 @@ import SessionAuthProvider from "@/context/SessionAuthProvider";
 import Navbar from "../components/Navbar/Navbar"
 import StyledComponentsRegistry from "./StyledComponentsRegistry";
 import {  Inter} from "next/font/google"
+import { NextIntlClientProvider } from 'next-intl';
 import { getLocale,getMessages } from "next-intl/server";
 import { ToastContainer } from "react-toastify";
 import "react-toastify/dist/ReactToastify.css";
@@ -28,10 +29,12 @@ export default async function RootLayout({
         className={inter.className}
       > 
         <StyledComponentsRegistry>
+        <NextIntlClientProvider messages={messages}>
         <SessionAuthProvider>
             <Navbar />
             {children}
           </SessionAuthProvider>
+          </NextIntlClientProvider>
         </StyledComponentsRegistry>
           <ToastContainer />
       </body>

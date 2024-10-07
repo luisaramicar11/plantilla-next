@@ -1,23 +1,19 @@
 import React from 'react';
+import Cookies from "js-cookie";
+import { useRouter } from "next/navigation";
+import { Dropdown } from "./SelectLanguageStyles"
+export default function SelectLanguage(): React.ReactElement {
+    const router = useRouter();
 
-interface ISelectProps {
-    label: string;
-    onChange: (event: React.ChangeEvent<HTMLSelectElement>) => void;
-}
+    const handleChange = (e: React.ChangeEvent<HTMLSelectElement>): void => {
+        Cookies.set("locale", e.target.value);
+        router.refresh();
+    };
 
-const SelectLanguage: React.FC<ISelectProps> = ({ label, onChange }) => {
     return (
-        <div>
-            <label htmlFor="language-select">{label}</label><br />
-            <select id="language-select" onChange={onChange}>
-                <option disabled value="">
-                    --Choose an option--
-                </option>
-                <option value=""></option>
-                <option value=""></option>
-            </select>
-        </div>
+        <Dropdown onChange={handleChange}>
+            <option value="en">English</option>
+            <option value="es">Español</option>
+        </Dropdown>
     );
-};
-
-export default SelectLanguage;
+}

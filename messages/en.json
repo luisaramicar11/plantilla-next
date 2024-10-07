@@ -7,8 +7,7 @@
     },
     "Navbar": {
         "home": "Home",
-        "about": "About",
-        "contact": "Contact",
+        "dashboard": "Dashboard",
         "logout": "Logout",
         "login": "Login",
         "register": "Register"

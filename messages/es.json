@@ -7,8 +7,7 @@
     },
     "Navbar": {
         "home": "Inicio",
-        "about": "Acerca",
-        "contact": "Contacto",
+        "dashboard": "Panel",
         "logout": "Salir",
         "login": "Loguearse",
         "register": "Registrarse"
