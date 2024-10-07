@@ -10,6 +10,14 @@
         "dashboard": "Panel",
         "logout": "Salir",
         "login": "Loguearse",
-        "register": "Registrarse"
+        "register": "Registrarse",
+        "cart": "Carrito"
+    },
+    "CardDetails":{
+        "description": "Descripción",
+        "price": "Precio",
+        "category": "Categoria",
+        "rate": "Calificación",
+        "count": "Conteo"
     }
 }

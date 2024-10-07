@@ -7,6 +7,13 @@ export const NavbarContainer = styled.nav`
   padding: 1rem;
 `;
 
+export const FavoritesLink = styled(Link)`
+margin-left: 20px;
+text-decoration: none;
+color: black;
+font-weight: bold;
+`;
+
 export const Container = styled.div`
   max-width: 1200px;
   margin: 0 auto;

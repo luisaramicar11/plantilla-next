@@ -6,6 +6,7 @@ import { IProduct } from '../../../types/productInterface';
 import { IResponse } from '../../../types/productInterface';
 import { useSession } from 'next-auth/react';
 import styled from 'styled-components';
+import { useTranslations } from 'next-intl';
 
 const Container = styled.div`
   padding: 15px;
@@ -42,7 +43,7 @@ const ProductDetails = () => {
   const { id } = useParams(); 
   const [product, setProduct] = useState<IProduct | null>(null);
   const [loading, setLoading] = useState(true);
-
+  const traduction = useTranslations('CardDetails');
   useEffect(() => {
     const fetchProductDetails = async () => {
         if (!session?.access_token) return;
@@ -92,11 +93,11 @@ const ProductDetails = () => {
     <Container>
       <ProductTitle>{product.title}</ProductTitle>
       <ProductImage src={product.image} alt={product.title} />
-      <ProductInfo><span>Descripción:</span> {product.description}</ProductInfo>
-      <ProductInfo><span>Precio:</span> ${product.price}</ProductInfo>
-      <ProductInfo><span>Categoria:</span> {product.category}</ProductInfo>
-      <ProductInfo><span>Calificación:</span> {product.rating.rate}</ProductInfo>
-      <ProductInfo><span>Conteo de calificaciones:</span> {product.rating.count}</ProductInfo>
+      <ProductInfo><span>{traduction('description')}:</span> {product.description}</ProductInfo>
+      <ProductInfo><span>{traduction('price')}:</span> ${product.price}</ProductInfo>
+      <ProductInfo><span>{traduction('category')}:</span> {product.category}</ProductInfo>
+      <ProductInfo><span>{traduction('rate')}:</span> {product.rating.rate}</ProductInfo>
+      <ProductInfo><span>{traduction('count')}:</span> {product.rating.count}</ProductInfo>
     </Container>
   );
 };

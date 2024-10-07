@@ -10,6 +10,14 @@
         "dashboard": "Dashboard",
         "logout": "Logout",
         "login": "Login",
-        "register": "Register"
+        "register": "Register",
+        "cart": "Cart"
+    },
+    "CardDetails":{
+        "description": "Description",
+        "price": "Price",
+        "category": "Category",
+        "rate": "Rate",
+        "count": "Count"
     }
 }

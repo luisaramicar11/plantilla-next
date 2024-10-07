@@ -1,11 +1,13 @@
 import type { Metadata } from "next";
 import SessionAuthProvider from "@/context/SessionAuthProvider";
-import Navbar from "../components/Navbar/Navbar"
+import Navbar from "../components/Navbar/Navbar";
+import { Providers } from './Providers';
 import StyledComponentsRegistry from "./StyledComponentsRegistry";
 import {  Inter} from "next/font/google"
 import { NextIntlClientProvider } from 'next-intl';
 import { getLocale,getMessages } from "next-intl/server";
 import { ToastContainer } from "react-toastify";
+import Footer from "../components/Footer"
 import "react-toastify/dist/ReactToastify.css";
 import "./globals.css";
 
@@ -29,12 +31,15 @@ export default async function RootLayout({
         className={inter.className}
       > 
         <StyledComponentsRegistry>
+          <Providers>
         <NextIntlClientProvider messages={messages}>
         <SessionAuthProvider>
             <Navbar />
             {children}
+            <Footer />
           </SessionAuthProvider>
           </NextIntlClientProvider>
+          </Providers>
         </StyledComponentsRegistry>
           <ToastContainer />
       </body>

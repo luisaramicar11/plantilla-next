@@ -14,6 +14,7 @@ const Container = styled.div`
   margin: 0 auto;
   padding: 2rem;
   border-radius: 8px;
+  height: 100vh;
 `;
 
 const Title = styled.h1`
@@ -65,7 +66,7 @@ const LoginPage = () => {
     }
 
     toast.success("Login exitoso");
-    router.push("/dashboard");
+    router.push("/product");
   };
 
   return (
