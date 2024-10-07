@@ -18,3 +18,7 @@ export interface IResponse<T> {
     data?: T;     
     error?: string; 
 }
+
+export interface CardProps{
+    product: IProduct;
+}
