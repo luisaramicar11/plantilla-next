@@ -72,14 +72,13 @@ const CartModal: React.FC<CartModalProps> = ({ onClose }) => {
   const cartItems = useSelector((state: RootState) => state.cart.items);
   const totalPrice = useSelector((state: RootState) => state.cart.totalPrice);
 
-  // Función para eliminar un artículo del carrito
   const handleRemoveItem = (id: number) => {
     dispatch(removeItem(id));
   };
 
   const handleClearCart = () => {
     dispatch(clearCart());
-    onClose(); // Cerrar el modal después de vaciar el carrito
+    onClose(); 
   };
 
   return (

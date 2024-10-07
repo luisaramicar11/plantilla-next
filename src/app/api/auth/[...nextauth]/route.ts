@@ -58,7 +58,6 @@ const handler:NextAuthOptions = NextAuth({
         );
 
         if (!res.ok) {
-          // Si la respuesta no es exitosa, retornar null
           return null;
         }
 
@@ -78,7 +77,6 @@ const handler:NextAuthOptions = NextAuth({
   ],
   callbacks: {
     async jwt({ token, user }: { token: JWTAuthenticate, user: UserAuthenticate | AdapterUser}) {
-      // Asegurarse de que user es de tipo IAuthUser
       if (user) {
         token.accessToken = (user as UserAuthenticate).access_token;
       }

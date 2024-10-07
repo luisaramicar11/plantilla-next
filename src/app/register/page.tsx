@@ -12,7 +12,6 @@ import Input from "../../components/UI/Input/Input";
 import Button from "../../components/UI/Button/Button";
 import Label from "../../components/UI/Label/Label"
 
-// Estilos usando styled-components
 const Container = styled.div`
   max-width: 600px;
   margin: 0 auto;
